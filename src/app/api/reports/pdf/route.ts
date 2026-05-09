@@ -94,9 +94,11 @@ export async function POST(req: NextRequest) {
 
     // ── Report details ───────────────────────────────────────────────────────
     section('Report Details');
-    field('Report ID',     reportId ?? '—');
+    
+    const accessCode = reportId ? reportId.split('-')[0].toUpperCase() : '—';
+    field('Access Code',   accessCode);
     field('Employer',      employerName ?? 'Unmatched — AI is matching regionally');
-    field('Submitted',     new Date().toISOString());
+    field('Submitted',     new Date().toLocaleDateString());
     field('Source',        'WorkForWho Community Platform');
     cursor -= 6;
 

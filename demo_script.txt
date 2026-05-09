@@ -1,0 +1,51 @@
+THE HOOK (0:00 - 0:35)
+[Visual: Show the Deccan Herald article about exploited workers. Your face in bottom corner]
+
+"The Community Track challenge asked us to bridge the gap where useful information is scattered to help people find jobs. 
+
+Look at this headline. For millions of informal workers in cities like Bengaluru, the most 'scattered' information is workplace safety and wage theft. When an employer abuses them, that information only exists in whispers. 
+
+To solve this, we built WorkForWho. To hit the Advanced Tier of the prompt, we didn't just build a chatbot. We built a Multi-Agent AI Pipeline powered by Google Gemini that turns those scattered warnings into a structured community shield. Watch this."
+
+---
+
+VOICE INTAKE & AGENT 1 (0:35 - 1:15)
+[Visual: Switch tabs to the WorkForWho app. Click the Voice tab. Hit the record button]
+
+"Vulnerable workers don't have time for 10-page forms, so we removed all friction. They just open the app and hit record."
+
+[Visual: Speak into the mic]
+'Summit Movers didn't pay my overtime and the trucks had no brakes.'
+
+[Visual: Stop recording. Show the Success Screen with AI extraction blocks]
+"Using the Gemini Multimodal API, our first AI agent instantly transcribes the audio and performs Named Entity Recognition. It extracts the exact risk vectors—identifying the employer, the sentiment, and flagging the severity. No login required. Total anonymity."
+
+---
+
+THE PRIVACY VAULT (1:15 - 1:45)
+[Visual: Copy the Secure Access Code. Navigate to /status, paste it, and hit 'Track Signal']
+
+"The prompt asked for AI that handles real workflows. Because informal workers can't make accounts, our system generates a cryptographic Secure Access Code. 
+
+They can drop this code into our Status Tracker Vault at any time to watch our AI's automated workflow in real-time—from 'Signal Secured' to 'AI Validation' to an 'Active Community Warning.' They even get an instant client-side PDF receipt."
+
+---
+
+AGENT 2: 4-AXIS INTELLIGENCE (1:45 - 2:20)
+[Visual: Navigate to the Employer Directory, click on an employer profile. Scroll down slowly to show the 4 bars]
+
+"So where does that data go? Our second Gemini Agent takes action. It continuously aggregates every scattered report for an employer into a live civic database. 
+
+Instead of generic 5-star ratings, our AI structures the data across a 4-Axis Intelligence Score: Wage Reliability, Safety, Fairness, and Communication. It writes a grounded Risk Briefing based only on real community data. We are turning scattered local knowledge into a protective API."
+
+---
+
+THE DECISION TOOL & CLOSER (2:20 - 3:00)
+[Visual: Click the 'Compare Intel' button. Select a "High Risk" employer and a "Low Risk" employer side-by-side]
+
+"Finally, the prompt asked us to help people make decisions. We built this dynamic Side-by-Side Comparison Tool. 
+
+A local worker weighing two job offers can instantly put them head-to-head. The difference between a safe environment and a dangerous one is visual, immediate, and undeniable."
+
+[Visual: Look directly into your webcam]
+"WorkForWho uses Google Gemini to bridge the gap between vulnerable workers and the scattered information they need to survive. Thank you."
