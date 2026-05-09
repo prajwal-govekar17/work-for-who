@@ -93,7 +93,7 @@ Workers submit reports without creating an account, logging in, or providing any
 - **Intelligence Agent** — Aggregates all reports for an employer, generates a **Trust Score (0-100)**, **Risk Level**, and a plain-language **Risk Briefing**
 
 ### 📊 4-Axis Community Intelligence
-Each employer profile displays a Turkopticon-inspired breakdown across four dimensions:
+Each employer profile displays a multidimensional breakdown across four critical trust axes:
 - **Wage Reliability** — Are workers paid fairly and on time?
 - **Safety Standards** — Are working conditions safe?
 - **Fairness** — Is treatment equitable and non-discriminatory?
@@ -246,7 +246,7 @@ sequenceDiagram
 | **Dual AI agents** | Separation of concerns: extraction ≠ aggregation |
 | **Text-scan fallback** | Reports still match employers even when AI quota is exhausted |
 | **Client-side PDF** | Receipt never touches the server — true anonymity |
-| **4-axis scoring** | Inspired by [Turkopticon](https://turkopticon.ucsd.edu/) — multidimensional trust |
+| **4-axis scoring** | Multidimensional trust axes for granular community-based assessment |
 | **Zod validation** | Runtime safety for AI outputs that can be unpredictable |
 
 ---
