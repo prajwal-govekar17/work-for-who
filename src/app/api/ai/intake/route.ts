@@ -43,7 +43,7 @@ export async function POST(req: Request) {
 
     let report: any;
     let isLegacy = false;
-    
+
     const modernRes = await supabase
       .from("reports")
       .select("id, raw_text, content_text, status")
@@ -51,16 +51,16 @@ export async function POST(req: Request) {
       .single();
 
     if (modernRes.error && (modernRes.error.code === 'PGRST204' || modernRes.error.code === '42703' || modernRes.error.message.includes('schema'))) {
-       const legacyRes = await supabase
-         .from("reports")
-         .select("id, content_text")
-         .eq("id", reportId)
-         .single();
-       if (legacyRes.error || !legacyRes.data) {
-         return NextResponse.json({ error: "Report not found" }, { status: 404 });
-       }
-       report = legacyRes.data;
-       isLegacy = true;
+      const legacyRes = await supabase
+        .from("reports")
+        .select("id, content_text")
+        .eq("id", reportId)
+        .single();
+      if (legacyRes.error || !legacyRes.data) {
+        return NextResponse.json({ error: "Report not found" }, { status: 404 });
+      }
+      report = legacyRes.data;
+      isLegacy = true;
     } else if (modernRes.error || !modernRes.data) {
       return NextResponse.json({ error: "Report not found" }, { status: 404 });
     } else {
@@ -247,7 +247,7 @@ export async function POST(req: Request) {
       if (finalStatus === "needs_review") {
         await supabase.from("scam_flags").insert({
           company_id: employerId,
-          flag_reason: !analysis.is_valid_report 
+          flag_reason: !analysis.is_valid_report
             ? "AI marked report as invalid/out of scope."
             : "Employer name could not be reliably identified.",
         });
@@ -285,7 +285,7 @@ export async function POST(req: Request) {
       if (finalStatus === "needs_review") {
         await supabase.from("report_flags").insert({
           report_id: report.id,
-          reason: !analysis.is_valid_report 
+          reason: !analysis.is_valid_report
             ? "AI marked report as invalid/out of scope."
             : "Employer name could not be reliably identified.",
         });

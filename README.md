@@ -105,6 +105,12 @@ After submission, workers can download a professionally formatted PDF receipt co
 ### 🔍 Employer Search & Profiles
 Public-facing employer profiles with trust scores, risk briefings, report timelines, and community-generated intelligence — searchable by name.
 
+### ⚖️ Side-by-Side Employer Comparison
+Workers can compare two employers directly using a dynamic, glassmorphism UI. It visually contrasts their Trust Scores, 4-Axis metrics, and AI Risk Briefings to help workers make immediate, data-driven decisions between job offers.
+
+### 🔐 Secure Access Codes & Status Tracking
+To maintain strict anonymity while allowing follow-ups, the system generates a random 8-character Secure Access Code (e.g., `A1B2C3D4`) upon report submission. Workers can enter this code in the Status Vault to view a live, animated timeline of their report (Signal Secured → AI Validating → Shield Active) without ever creating an account.
+
 ### 🛡️ Quota-Resilient Matching
 When AI quota is exhausted, the system degrades gracefully: reports are saved, employers are matched via text-scan fallback, and users see a success confirmation — never an error.
 
@@ -132,12 +138,15 @@ src/
 ├── app/
 │   ├── page.tsx                    # Landing page with live stats
 │   ├── report/page.tsx             # Anonymous report submission
+│   ├── status/page.tsx             # Secure status tracker timeline
 │   ├── employers/
 │   │   ├── page.tsx                # Employer directory
+│   │   ├── compare/page.tsx        # Side-by-side comparison tool
 │   │   └── [id]/page.tsx           # Employer profile + 4-axis chart
 │   └── api/
 │       ├── reports/
 │       │   ├── route.ts            # Save anonymous reports
+│       │   ├── status/route.ts     # Look up report by access code
 │       │   └── pdf/route.ts        # PDF receipt generator
 │       ├── ai/
 │       │   ├── intake/route.ts     # AI: Extract risk signals

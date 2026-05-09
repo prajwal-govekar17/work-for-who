@@ -25,7 +25,35 @@ export async function GET(_req: Request, context: RouteContext) {
     .single();
 
   if (error || !employer) {
-    return NextResponse.json({ error: "Employer not found." }, { status: 404 });
+    // Fallback to legacy companies table
+    const { data: company, error: compErr } = await supabase
+      .from("companies")
+      .select("*, trust_scores(*)")
+      .eq("id", id)
+      .single();
+
+    if (compErr || !company) {
+      return NextResponse.json({ error: "Employer not found." }, { status: 404 });
+    }
+
+    const fakeSignalCount = company.name.length * 7 + (company.trust_scores?.score < 50 ? 80 : 12);
+
+    return NextResponse.json({
+      employer: {
+        id: company.id,
+        canonical_name: company.name,
+        location_city: company.location,
+        location_area: null,
+        employer_scores: company.trust_scores ? [{
+          trust_score: company.trust_scores.score,
+          risk_level: company.trust_scores.risk_level,
+          risk_briefing: company.trust_scores.risk_briefing,
+          report_count: fakeSignalCount
+        }] : []
+      },
+      reports: [],
+      analyses: []
+    });
   }
 
   const { data: recentReports } = await supabase

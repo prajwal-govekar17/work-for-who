@@ -103,15 +103,26 @@ export default async function EmployersPage() {
             <h1 className="text-5xl font-black text-slate-900 tracking-tighter">Employer Intel</h1>
             <p className="text-slate-500 font-bold text-sm">Real-time safety signals for the community.</p>
           </div>
-          <Link
-            href="/"
-            className="text-xs font-black text-slate-400 hover:text-blue-600 transition flex items-center gap-2 uppercase tracking-widest bg-white px-4 py-2 rounded-xl shadow-sm border border-slate-100"
-          >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-            Back Home
-          </Link>
+          <div className="flex gap-4">
+            <Link
+              href="/employers/compare"
+              className="text-xs font-black text-white bg-blue-600 hover:bg-blue-700 transition flex items-center gap-2 uppercase tracking-widest px-4 py-2 rounded-xl shadow-lg shadow-blue-100"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+              </svg>
+              Compare Intel
+            </Link>
+            <Link
+              href="/"
+              className="text-xs font-black text-slate-400 hover:text-blue-600 transition flex items-center gap-2 uppercase tracking-widest bg-white px-4 py-2 rounded-xl shadow-sm border border-slate-100"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
+              Back Home
+            </Link>
+          </div>
         </header>
 
         <div className="grid gap-6">

@@ -17,10 +17,35 @@ export async function GET(req: Request) {
   }
 
   const { data, error } = await dbQuery;
-  if (error) {
-    console.error("Employer search failed:", error);
-    return NextResponse.json({ error: "Failed to search employers." }, { status: 500 });
+  
+  let employers = data ?? [];
+
+  // Fallback to legacy companies table if empty or error (table missing)
+  if (employers.length === 0) {
+    try {
+      let companyQuery = supabase
+        .from("companies")
+        .select("id, name, location")
+        .order("created_at", { ascending: false })
+        .limit(30);
+      
+      if (query) {
+        companyQuery = companyQuery.ilike("name", `%${query}%`);
+      }
+      
+      const { data: companies } = await companyQuery;
+      if (companies) {
+        employers = companies.map(c => ({
+          id: c.id,
+          canonical_name: c.name,
+          location_city: c.location,
+          location_area: null,
+          employer_scores: [],
+          is_legacy: true
+        })) as any;
+      }
+    } catch { /* ignore */ }
   }
 
-  return NextResponse.json({ employers: data ?? [] });
+  return NextResponse.json({ employers });
 }

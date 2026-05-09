@@ -447,6 +447,22 @@ function ReportFormContent() {
                   </p>
                 </div>
               )}
+
+              {/* TRACKING CODE */}
+              <div className="pt-8 border-t-2 border-slate-50">
+                <p className="text-[10px] uppercase tracking-widest text-slate-400 font-black mb-3">Your Secure Access Code</p>
+                <div className="bg-slate-900 p-6 rounded-[2rem] flex items-center justify-between shadow-inner">
+                  <div className="flex items-center gap-3">
+                    <span className="text-3xl font-black text-white tracking-widest font-mono">
+                      {result.report?.id?.split('-')[0].toUpperCase()}
+                    </span>
+                  </div>
+                  <a href={`/status?code=${result.report?.id?.split('-')[0].toUpperCase()}`} className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white text-[10px] font-black uppercase tracking-widest rounded-xl transition">
+                    Check Status
+                  </a>
+                </div>
+                <p className="text-xs text-slate-400 font-bold mt-3">Save this code to check the status of your report later. No account required.</p>
+              </div>
             </div>
             
             <div className="mt-10 flex flex-col sm:flex-row gap-4 relative z-10">
