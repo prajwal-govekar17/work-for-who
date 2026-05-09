@@ -6,6 +6,13 @@
   <p align="center">
     Workers report. AI analyzes. Communities are protected.
   </p>
+  <p align="center">
+    🚀 <strong><a href="https://work-for-who.vercel.app">Live Demo: work-for-who.vercel.app</a></strong> 🚀
+  </p>
+</p>
+
+<p align="center">
+  <a href="https://work-for-who.vercel.app"><img src="https://img.shields.io/badge/Live_Deployment-Vercel-black?style=for-the-badge&logo=vercel" alt="Deployed on Vercel" /></a>
 </p>
 
 <p align="center">
