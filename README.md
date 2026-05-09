@@ -15,9 +15,12 @@ AI-powered worker trust infrastructure for informal labor markets.
 
 ## Setup
 1. `npm install`
-2. Copy `.env.example` to `.env.local` and fill in your Supabase and Gemini keys.
-3. Apply the SQL schema in `supabase/migrations/` and `supabase/seed.sql` to your Supabase project.
-4. `npm run dev`
+2. Copy `.env.example` to `.env.local`.
+3. Configure AI auth (choose one):
+   - **API key mode (fastest):** set `GEMINI_API_KEY`
+   - **Vertex mode (Google Cloud credits):** set `GOOGLE_CLOUD_PROJECT` and `GOOGLE_CLOUD_LOCATION`, then configure local Google auth (`GOOGLE_APPLICATION_CREDENTIALS` or ADC).
+4. Apply the SQL schema in `supabase/migrations/` and `supabase/seed.sql` to your Supabase project.
+5. `npm run dev`
 
 ## AI Agents
 - **Intake Agent:** `/api/ai/intake`
