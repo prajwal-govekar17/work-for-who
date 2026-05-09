@@ -39,3 +39,23 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# debug & scratch files
+*.log
+debug-*.log
+test-*.ts
+seed.js
+
+# internal planning docs
+core-loop.md
+idea.md
+plan.md
+rules.md
+skills.md
+tasks.md
+vision.md
+CODEX_FIX_CONTEXT.md
+CLAUDE.md
+
+# cursor
+.cursor/
